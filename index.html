@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>hangouts</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/css/mdb.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/js/mdb.min.js"></script>
+</head>
+
+<body>
+    <style>
+        .card {
+            width: 20%;
+            margin-top: 7%;
+        }
+
+        #chatIcon {
+            font-size: 100px;
+        }
+
+        p {
+            text-align: left;
+            color: black;
+        }
+
+        .md-form {
+            margin-top: -5px;
+            margin-bottom: 50px;
+        }
+
+        .view {
+            padding-top: 50px;
+            height: 200px;
+            background: #1fcc2a;
+            margin-bottom: 20px;
+        }
+
+        #logIn {
+            width: 90%;
+        }
+
+        ::-webkit-input-placeholder {
+            font-style: italic;
+        }
+
+        :-moz-placeholder {
+            font-style: italic;
+        }
+
+        ::-moz-placeholder {
+            font-style: italic;
+        }
+
+        :-ms-input-placeholder {
+            font-style: italic;
+        }
+
+        #nickname {
+            text-align: center;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        #header {
+            background-color: white;
+            height: 80px;
+            padding: 15px;
+            border-bottom: 1px solid lightblue;
+            box-shadow: 0px 0px 5px black;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        #chatHeader,
+        #messageHeader {
+            background: #1a1a1a;
+            height: 40px;
+            padding: 10px;
+            color: white;
+        }
+
+        #messageBody {
+            margin-left: -25px;
+        }
+
+        #onlines,
+        #message {
+            height: 500px;
+            padding-top:10px;
+            padding-left:5px;
+            padding-right:5px;
+            overflow-y: scroll;
+        }
+        #message{
+            background-color: #e6e6e6;
+            border : 1px solid black;
+        }
+
+        #onlines{
+            padding-left:0px;
+            padding-right:0px;
+        }
+
+        .logo {
+            height: 70px;
+            width: auto;
+            margin-top: -15px;
+            margin-left: 520px;
+
+        }
+
+        header {
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .container,
+        header {
+            display: none;
+        }
+        .border{
+            border : 1px solid black;
+        }
+    </style>
+    <center>
+        <div class="shadow card card-cascade narrower">
+            <img class="card-img-top" src="http://pluspng.com/img-png/wechat-png-related-wechat-icon-images-1024.jpg"
+                alt="Card image" style="width:100%">
+            <div class="card-body card-body-cascade">
+                <p>Enter your nick name:</p>
+                <div class="md-form">
+                    <input type="text" id="nickname" class="form-control" placeholder="Nickname">
+                </div>
+                <button id="logIn" href="home.html" class="btn btn-info">Log In</button>
+            </div>
+        </div>
+    </center>
+    <header>
+        <div id="header" class="col md-12">
+            <img src="https://miro.medium.com/max/636/0*u0IFwT3HiIoJSG46.png" class="logo">
+        </div>
+    </header>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div id="onlinechats" class=col-md-4>
+                <div id="chatHeader" class=" col-md-12">
+                    Online Friends
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="onlines" class="border con-md-12 overflow-auto">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="messageBody" class="col-md-8">
+                <div id="messageHeader" class="col-md-12">
+                    <h6><b>Group Chat</b>
+                        <h6>
+                </div>
+                <div id="message" class="border col-md-12">
+
+                </div>
+                <div class="input-group mb-3">
+                    <input id="groupmessage" type="text" class="form-control" placeholder="">
+                    <div class="input-group-append">
+                        <button id="send" class=" btn btn btn-outline-default m-0 px-3 py-2 z-depth-0 waves-effect" type="submit">
+                            Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="client.js"></script>
+</body>
+
+</html>

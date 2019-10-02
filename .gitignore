@@ -58,4 +58,11 @@ typings/
 .env
 
 # next.js build output
-.next
+.
+
+
+# Heroku
+node_modules/
+    npm-debug.log
+    .DS_Store
+    *.env/
